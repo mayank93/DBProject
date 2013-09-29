@@ -1,0 +1,14 @@
+
+#################################################################################
+#	Intro to databases project.						#	
+#	A portal for sweet shop owner to its make managing operations easy.	#
+#       By Mayank Gupta                         				#
+#       mayankrocks.1993@gmail.com              				#
+#       mayank.g@students.iiit.in               				#
+#################################################################################
+
+
+There is a file connection.php which is used to connect to database, edit it in case  you want to change the database name.
+Then create a database in mysql, populate it with dump named "companydb.sql".
+Host the code through a server. 
+Now its ready to be operated.

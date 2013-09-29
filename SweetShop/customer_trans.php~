@@ -1,0 +1,24 @@
+<?php include'connection.php';
+session_start();
+if(isset($_REQUEST['submit']))
+{
+  for($i=0;$i<$_SESSION['nos'];$i++)
+  { 
+  //  echo $_REQUEST['name'][$i];
+    $insert="insert into SWEETS_PURCHASED values(
+      '".$_SESSION['C_ID']."',
+      '".$_REQUEST['name'][$i]."',
+      '".$_REQUEST['amt'][$i]."',
+      '".$_REQUEST['qty'][$i]."',
+      '".$_REQUEST['type'][$i]."'
+    );";
+    mysql_query($insert,$connect);
+    echo mysql_error();
+    $q="update SELLING set Available_Qty = Available_Qty - ".$_REQUEST['qty'][$i]." where name='".$_REQUEST['name'][$i]."';";
+    mysql_query($q,$connect); 
+    echo mysql_error();
+  }
+  echo "Thank you";
+}
+?>
+
